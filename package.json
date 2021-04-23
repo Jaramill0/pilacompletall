@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./server/bin/www",
-    "watchdev":"babel-watch ./server/bin/www"
+    "watchdev": "babel-watch ./server/bin/www"
   },
   "dependencies": {
     "@babel/cli": "^7.13.14",
@@ -18,5 +18,9 @@
     "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.1"
   }
 }
