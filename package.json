@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./server/bin/www",
-    "watchdev": "babel-watch ./server/bin/www"
+    "watchdev": "babel-watch ./server/bin/www",
+    "b:s": "npm run clean && babel ./server --out-dir dist-server --copy-files"
   },
   "dependencies": {
     "@babel/cli": "^7.13.14",
