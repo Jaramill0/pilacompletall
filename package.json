@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/bin/www",
+    "start": " cross-env NODE_ENV= production node ./server/bin/www",
     "watchdev": "babel-watch ./server/bin/www"
   },
   "dependencies": {
@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.13.15",
     "babel-watch": "^7.4.1",
     "cookie-parser": "~1.4.4",
+    "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "hbs": "^4.1.1",
