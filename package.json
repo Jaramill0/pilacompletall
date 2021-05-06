@@ -5,7 +5,7 @@
   "scripts": {
     "start": " cross-env NODE_ENV= production node ./server/bin/www",
     "watchdev": "babel-watch ./server/bin/www",
-    "w:s": "cross-env NODE_ENV=development webpack serve --config ./webpack.config.js --mode development"
+    "w:s": "cross-env NODE_ENV=development webpack serve --config ./webpack.dev.config.js --mode development"
     
   },
   "dependencies": {
