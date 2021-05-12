@@ -1,12 +1,52 @@
+const path = require('path');
 module.exports = {
-    // Se Especifica el Archivo de Entrada
-    entry: './client/index.js',
-    // Se Espesifica el Archivo de Salida
-    output: {
-        path: '/public', // ruta Absoluta de la salida
-        filename:'bundle.js' // Este es el nombre del archivo de salida
-    },
-    devServer:{
-        contentBase:'./public'
+        // Establecer el modo de desarrollo
+        mode: 'development',
+        // Espesificando el archivo de entrada
+        entry: './client/index.js',
+        // Espesificar la Salida 
+        output: {
+            path: path.join(__dirname, 'public'),
+            // nombre del archivo de salida
+            filename: 'js/bunlde.js',
+            // Ruta del Path Publico para fines del servidor de desarrollo
+            publicPath: '/'
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use:[
+                        {
+                            loader:'babel-loader',
+                            options:{
+                                presets:[
+                                    [
+                                        '@babel/preset-env',
+                                        {
+                                            'modules': false,
+                                            'useBuiltIns': 'usage',
+                                            'targets':"> 0.25%, not dead",
+                                            'corejs': 3
+                                        }
+                                    ]
+                                ],
+                                "plugins":[
+                                    [
+                                        "module-resolver",
+                                        {
+                                            "root":["./"],
+                                            "alias":{
+                                                "@client":"./client",
+                                            }
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
     }
-}

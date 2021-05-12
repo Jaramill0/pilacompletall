@@ -1,0 +1,1 @@
+console.log("Web pack Sirviendo Correctamente"),((o="hola")=>{alert(o)})(),async function (){ console.log("Calling an async function");const o=await new Promise((()=>{setTimeout((()=>{o("resolved")}),2e3)}));console.log(o)}();
