@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=production node ./server/bin/www",
-    "watchdev": "cross-env NODE_ENV=development babel-watch ./server/bin/www",
-    "w:s": "cross-env NODE_ENV=development webpack serve --config ./webpack.dev.config.js --mode development"
+    "watchdev": "cross-env NODE_ENV=development babel-watch --watch ./server/views ./server/bin/www",
+    "w:s": "cross-env NODE_ENV=development webpack serve --config ./webpack.dev.config.js --mode development",
+    "cleanc": "rimraf public/js",
+    "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
+    "build": "npm run b:c"
   },
   "dependencies": {
     "@babel/cli": "^7.13.14",
@@ -17,15 +20,18 @@
     "cross-env": "^7.0.3",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "hbs": "^4.1.1",
+    "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-preset-minify": "^0.5.1",
     "core-js": "^3.10.2",
+    "css-loader": "^5.2.4",
+    "mini-css-extract-plugin": "^1.6.0",
     "webpack": "^5.36.1",
     "webpack-cli": "^4.6.0",
     "webpack-dev-middleware": "^4.1.0",

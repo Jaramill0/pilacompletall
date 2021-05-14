@@ -1,3 +1,5 @@
+import './stylesheets/style.css'
+import './stylesheets/mystylesheet.css'
 console.log("Web Pack Trabajando !! ");
 // Default parameters estan disponible ES/2015
 let show = (m = "hola ") => {
