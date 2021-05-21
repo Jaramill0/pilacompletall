@@ -15,7 +15,7 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, 'public'),
-        port: 8085,
+        port: process.env.PORT || '3000',
         host: 'localhost'
     },
     module: {
@@ -31,7 +31,7 @@ module.exports = {
                                 {
                                     'modules': false,
                                     'useBuiltIns': 'usage',
-                                    'targets': "> 0.25%, not dead",
+                                    'targets': {"chrome":"80"},
                                     'corejs': 3
                                 }
                             ]
