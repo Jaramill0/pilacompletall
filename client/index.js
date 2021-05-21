@@ -2,7 +2,7 @@ import './stylesheets/style.css'
 import './stylesheets/mystylesheet.css'
 
 console.log("Web Pack Trabajando !! ");
-// Default parameters estan disponible ES/2015
+// Default parameters estan disponible ES6/2015
 let show = (m = "Hot Module Replacement Working") => {
     alert(m)
 };
