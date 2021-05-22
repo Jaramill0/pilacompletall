@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'public'),
         // nombre del archivo de salida
-        filename: 'js/bunlde.js',
+        filename: 'js/bundle.js',
         // Ruta del Path Publico para fines del servidor de desarrollo
         publicPath: '/'
     },
