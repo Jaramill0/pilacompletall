@@ -26,11 +26,14 @@
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-preset-minify": "^0.5.1",
     "core-js": "^3.10.2",
     "css-loader": "^5.2.4",
+    "eslint": "^7.26.0",
+    "eslint-webpack-plugin": "^2.5.4",
     "mini-css-extract-plugin": "^1.6.0",
     "webpack": "^5.36.1",
     "webpack-cli": "^4.6.0",
