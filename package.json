@@ -23,7 +23,10 @@
     "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "webpack": "^5.36.1",
+    "webpack-dev-middleware": "^4.3.0",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -34,13 +37,12 @@
     "css-loader": "^5.2.4",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-webpack-plugin": "^2.5.4",
     "mini-css-extract-plugin": "^1.6.0",
-    "webpack": "^5.36.1",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-middleware": "^4.3.0",
-    "webpack-dev-server": "^3.11.2",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-dev-server": "^3.11.2"
   }
 }
