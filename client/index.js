@@ -1,6 +1,6 @@
 import './stylesheets/style.css';
 import './stylesheets/mystylesheet.css';
-
+/*
 // eslint-disable-next-line no-console
 console.log('Web Pack Trabajando !! ');
 // Default parameters estan disponible ES6/2015
@@ -25,3 +25,4 @@ async function asyncCall() {
   console.log(result);
 }
 asyncCall();
+*/
