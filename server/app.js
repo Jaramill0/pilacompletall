@@ -14,6 +14,9 @@ const logger = require('morgan');
 const indexRouter = require('@s-rutas/index');
 const usersRouter = require('@s-rutas/users');
 
+//Importando configurations
+import configTemplateEngine from '@s-config/template-engine';
+
 // Consultar el modo en que se esta ejecutando la aplicacion
 const env = process.env.NODE_ENV || 'development';
 
@@ -50,8 +53,7 @@ if (env === 'development') {
 }
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+configTemplateEngine(app);
 // se hace entre el elemento exite el middleware hace directamente la peticion
 app.use(logger('dev'));
 app.use(express.json());
