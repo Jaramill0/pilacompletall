@@ -3,7 +3,11 @@ import webpack from 'webpack';
 // Webpack Modules
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
+// eslint-disable-next-line import/no-unresolved
+import configTemplateEngine from '@s-config/template-engine';
 import webpackDevConfig from '../webpack.dev.config';
+
+// Importando configurations
 
 const createError = require('http-errors');
 const express = require('express');
@@ -11,11 +15,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+// eslint-disable-next-line import/no-unresolved
 const indexRouter = require('@s-rutas/index');
+// eslint-disable-next-line import/no-unresolved
 const usersRouter = require('@s-rutas/users');
-
-//Importando configurations
-import configTemplateEngine from '@s-config/template-engine';
 
 // Consultar el modo en que se esta ejecutando la aplicacion
 const env = process.env.NODE_ENV || 'development';
@@ -24,6 +27,7 @@ const env = process.env.NODE_ENV || 'development';
 const app = express();
 // verificando el modo de ejecucion de la aplicacion
 if (env === 'development') {
+  // eslint-disable-next-line no-console
   console.log('Ejecutando en modo desarrollo: WebPack Hot Reloading');
   // PASO 1.-agregando la ruta del   HMR
   // reload=true : habilita la recarga del Front-End cuando hay cambios en el codigo fuente del Front-End
@@ -49,6 +53,7 @@ if (env === 'development') {
   // PASO 5.- Agregando el Webpack Hot Middleware
   app.use(webpackHotMiddleware(compiler));
 } else {
+  // eslint-disable-next-line no-console
   console.log('Ejecutando en modo Produccion...');
 }
 
