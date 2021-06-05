@@ -1,2 +1,5 @@
 # ignorando las dependencias
 node_modules
+#ignorando los archivos de logs
+logs
+*.logs
