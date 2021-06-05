@@ -13,7 +13,8 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
+const winston = require('winston');
 
 // eslint-disable-next-line import/no-unresolved
 const indexRouter = require('@s-rutas/index');
@@ -60,7 +61,7 @@ if (env === 'development') {
 // view engine setup
 configTemplateEngine(app);
 // se hace entre el elemento exite el middleware hace directamente la peticion
-app.use(logger('dev'));
+app.use(morgan('combined', { stream: winston.stream }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
