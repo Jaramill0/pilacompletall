@@ -11,7 +11,7 @@ const colors = {
   http: 'magenta',
   debug: 'green',
 };
-// Agregando el Perfil a wiinstoon
+// Agregando el Perfil a wiinston
 winston.addColors(colors);
 
 // formato de consola
@@ -56,13 +56,14 @@ const options = {
     format: myFormat,
   },
 };
+
 // Creando la instancia del Logger
 const logger = winston.createLogger({
   transports: [
-    new winston.transport.File(options.infoFile),
-    new winston.transport.File(options.warningFile),
-    new winston.transport.File(options.errorFile),
-    new winston.transport.Console(options.console),
+    new winston.transports.File(options.infoFile),
+    new winston.transports.File(options.warningFile),
+    new winston.transports.File(options.errorFile),
+    new winston.transports.Console(options.console),
   ],
   exitOnError: false, // No finaliza en excepsiones manejadas
 });
@@ -73,4 +74,5 @@ logger.stream = {
     logger.info(message);
   },
 };
+
 export default logger;
