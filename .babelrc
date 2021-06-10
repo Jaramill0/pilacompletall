@@ -2,7 +2,8 @@
   "presets": [
     "minify",
     [
-      "@babel/preset-env", {
+      "@babel/preset-env",
+      {
         "targets": {
           "node": "current"
         }
