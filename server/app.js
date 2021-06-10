@@ -5,16 +5,16 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 // eslint-disable-next-line import/no-unresolved
 import configTemplateEngine from '@s-config/template-engine';
+// eslint-disable-next-line import/no-unresolved
+import winston from '@server/config/winston';
 import webpackDevConfig from '../webpack.dev.config';
 
 // Importando configurations
-
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const winston = require('winston');
 
 // eslint-disable-next-line import/no-unresolved
 const indexRouter = require('@s-rutas/index');
