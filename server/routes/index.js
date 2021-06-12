@@ -1,16 +1,14 @@
-var express = require ('express');
-var router = express.Router();
+// importando el router de Home
+import homeRouter from './home';
+// importando Router de User
+import userRouter from './users';
+// Agregando  las rutas  a la aplicacion
+const addRoutes = (app) => {
+  app.use('/', homeRouter);
+  app.use('/', userRouter);
+  return app;
+};
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' ,author: 'Hugo Enrique Jaramillo', appname: 'Web Development', company: 'Super Root'});
-});
-/*Agregando Nueva Ruta*/
-router.get('/greeting',function(req, res, next){
-  res.send('Hola Jaramillo Web')
-})
-/*Ruta Creada */
-router.get('/direccion',function(req,res,next){
-  res.send('Programacion Web en Pila Completa II')
-})
-module.exports = router;
+export default {
+  addRoutes,
+};
