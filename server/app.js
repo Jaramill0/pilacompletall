@@ -3,9 +3,9 @@ import webpack from 'webpack';
 // Webpack Modules
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-// eslint-disable-next-line import/no-unresolved
 import configTemplateEngine from '@s-config/template-engine';
-// eslint-disable-next-line import/no-unresolved
+// Importando el router principal
+import router from '@server/routes/index';
 import winston from '@server/config/winston';
 import webpackDevConfig from '../webpack.dev.config';
 
@@ -15,11 +15,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-
-// eslint-disable-next-line import/no-unresolved
-const indexRouter = require('@s-rutas/index');
-// eslint-disable-next-line import/no-unresolved
-const usersRouter = require('@s-rutas/users');
 
 // Consultar el modo en que se esta ejecutando la aplicacion
 const env = process.env.NODE_ENV || 'development';
@@ -68,8 +63,8 @@ app.use(cookieParser());
 // se insertar express diversos modulos para espesificar la ruta = public
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// instalando el enrutador principal a la aplicacion Express
+router.addRoutes(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
