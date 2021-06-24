@@ -1,16 +1,43 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>{{appname}}</title>
-      <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>
+      {{appname}}
+    </title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!--Estilos del bundlle de web pack-->
-    <link rel='stylesheet' href='/styles/app.css' />
+    <link rel="stylesheet" href="/styles/app.css" />
   </head>
   <body>
-    {{{body}}}
+    <nav class="nav-wrapper">
+      <div class="container">
+        <a href="/" class="brand-logo">
+          &#128209;ProjectNote
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="#">
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="/about">
+              Acerca de.
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      {{{body}}}
+    </div>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
     <!--Estilos del bundlle de web pack-->
     <script src="/js/bundle.js"></script>
   </body>
