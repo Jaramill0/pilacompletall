@@ -1,7 +1,7 @@
 // importando router
 import { Router } from 'express';
 /** Importando el Home Controler */
-// eslint-disable-next-line import/no-unresolved
+
 import homeController from '@server/controllers/homeController';
 
 // creando la instancia de un router
